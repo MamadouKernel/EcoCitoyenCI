@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Liste des traitements</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th scope="col">ID</th>
+                  <th scope="col">Lieu de traitement</th>
+                  <th scope="col">Quantité</th>
+                  <th scope="col">Statut</th>
+                  <th scope="col">Dechets</th>
+                  <th scope="col">Actions</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let traitement of traitements; let index = index;">
+                    <th scope="row">{{ index + 1 }}</th>
+                    <td>{{ traitement?.lieuTraitement }}</td>
+                    <td>{{ traitement?.quantite }}</td>
+                    <td>{{ traitement?.statut }}</td>
+                    <td>
+                      {{ traitement?.dechet?.libelle }}
+                    </td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" (click)="printPage()">Imprimer</button>
+                      <button class="btn btn-danger btn-sm" (click)="deleteOneTraitement(traitement?.id)">Supprimer</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

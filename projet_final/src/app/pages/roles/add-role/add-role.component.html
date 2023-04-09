@@ -1,0 +1,58 @@
+<div class="container-fluid p-0 m-0 h-100 w-100">
+  <div class="row h-100">
+    <div class="m-auto col-sm-12 col-md-6 col-lg-6">
+      <div class="content-card">
+        <div class="container-fluid">
+          <div class="row">
+            <div
+              class="col-sm-12 col-md-12 d-flex align-items-center flex-sm-column flex-md-row justify-content-center">
+              <h4 class="font-name-jacques-francois-shadow m-0 color-green">Eco-Citoyen CI</h4>
+              <div class="container-img">
+                <img alt="Icon" src="assets/images/full-trash.png">
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <h6 class="font-name-jet-brains-mono text-center">
+                  Ajouter un role
+              </h6>
+            </div>
+
+            <div *ngIf="message" [ngClass]="{
+              'alert': true,
+              'alert-success': message.startsWith('Le rôle a été créé'),
+              'alert-danger': message.startsWith('Erreur lors de la création')
+            }">
+            {{ message }}
+            <button type="button" class="close" aria-label="Close" (click)="message = ''">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+
+            <form class="container-fluid" [formGroup]="roleform">
+              <div class="row mb-3">  
+                <div class="col-12 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col-4 border-end icon-field">
+                      <img alt="" src="assets/images/Name-Tag.png">
+                    </div>
+                    <div class="col field">
+                      <input formControlName="libelle" name="libelle" class="form-control" placeholder="Role.................................." type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="col-12 mt-2 mb-2 justify-content-center d-flex mt-2">
+              <button (click)="submitForm()" name="submit" class="text-white bg-success btn align-items-center text-center">
+                <label>Créer role</label>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

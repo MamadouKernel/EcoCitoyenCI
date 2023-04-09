@@ -1,0 +1,67 @@
+<div class="container-fluid content">
+  <div class="row ">
+    <div class=" col-sm-12 col-md-4 col-lg-4">
+      <div class="item-card">
+
+        <h2 class="font-name-iceland">{{nbCollectes}}</h2>
+        <p class="font-name-iceland">Collectes</p>
+      </div>
+    </div>
+    <div class=" col-sm-12 col-md-4 col-lg-4">
+      <div class="item-card">
+
+        <h2 class="font-name-iceland">{{nbDechets}}</h2>
+        <p class="font-name-iceland">Déchets</p>
+      </div>
+    </div>
+    <div class=" col-sm-12 col-md-4 col-lg-4">
+      <div class="item-card">
+        <h2 class="font-name-iceland">{{nbTraitements}}</h2>
+        <p class="font-name-iceland">Traitements</p>
+      </div>
+    </div>
+    <div class="col-12 mt-3">
+
+      
+      <ng-template #titleTemplate>
+        <div class="container-fluid">
+          <div class="row p-3">
+            <div class="col-sm-12 col-md-12 justify-content-between d-flex align-items-center">
+              <div class="title">
+                <h3 class="font-name-iceland">Tableau des centres de traitements</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <nz-table #columnTable [nzData]="traitements" [nzScroll]="{ x: '1100px' }" [nzTitle]="titleTemplate" nzBordered>
+        <thead>
+        <tr>
+          <th>#</th>
+          <th nzLeft>Lieu du traitement</th>
+          <th nzWidth="10%" >Statut</th>
+          <th nzWidth="9%">Quantité</th>
+          <th nzWidth>Type de dechet</th>
+          <th nzRight>Dechets</th>
+          <th nzRight>#</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of traitements; let index = index;">
+          <td nzLeft>{{ index + 1 }}</td>
+          <td nzLeft>{{ data?.lieuTraitement }}</td>
+          <td >{{ data?.statut}}</td>
+          <td >{{ data?.quantite }}</td>
+          <td>{{ data?.dechet?.typeDechet?.libelle }}</td>
+          <td nzRight>{{ data?.dechet?.libelle }}</td>
+          <td nzRight>
+            <div class="d-flex">
+              <a class="btn btn-secondary btn-sm me-1" (click)="printPage()" >Imprimer</a>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>

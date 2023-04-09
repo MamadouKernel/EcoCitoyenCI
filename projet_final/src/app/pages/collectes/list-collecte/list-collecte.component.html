@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+            <h4 class="card-title">Liste des rôles</h4>
+            </div>
+            <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                <thead class=" text-primary">
+                  <th scope="col">ID</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Quantite</th>
+                  <th scope="col">Statut</th>
+                  <th hidden scope="col">role</th>
+                  <th scope="col">Actions</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let collecte of collectes; let index = index;">
+                    <th scope="row">{{ index + 1 }}</th>
+                    <td>{{ collecte?.date }}</td>
+                    <td>{{ collecte?.quantite }}</td>
+                    <td>{{ collecte?.statut }}</td>
+                    <td hidden>{{ collecte?.users?.role?.libelle}}</td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" (click)="printPage()">Imprimer</button>
+                      <button class="btn btn-danger btn-sm" (click)="deleteOneCollecte(collecte.id)">Supprimer</button>
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

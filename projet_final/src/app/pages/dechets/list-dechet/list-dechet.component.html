@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Liste des rôles</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th scope="col">#</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Libelle</th>
+                  <th scope="col">Origine</th>
+                  <th scope="col">Type de déchet</th>
+                  <th scope="col">Actions</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let dechet of dechets; let index = index;">
+                    <th scope="row">{{ index + 1 }}</th>
+                    <td>
+                      <img src="{{dechet?.image}}" alt="{{ dechet?.libelle }}" style="max-width: 100px;">
+                    </td>
+                    <td>{{ dechet?.libelle }}</td>
+                    <td>{{ dechet?.origine }}</td>
+                    <td>{{ dechet?.typeDechet?.libelle}}</td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" (click)="printPage()">Imprimer</button>
+                      <button class="btn btn-danger btn-sm" (click)="deleteOneDechet(dechet?.id)">Supprimer</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

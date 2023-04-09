@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+            <h4 class="card-title">Liste des types de déchets</h4>
+            </div>
+            <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                <thead class=" text-primary">
+                  <th scope="col">ID</th>
+                  <th scope="col">Couleur du type de déchet</th>
+                  <th scope="col">Types de déchet</th>
+                  <th scope="col">description</th>
+                  <th scope="col">Actions</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let typeDechet of typeDechets; let index = index;">
+                    <th scope="row">{{ index + 1 }}</th>
+                    <td>{{ typeDechet.couleur }}</td>
+                    <td>{{ typeDechet.libelle }}</td>
+                    <td>{{typeDechet.description}}</td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" (click)="printPage()">Imprimer</button>
+                      <button class="btn btn-danger btn-sm" (click)="deleteOneRole(typeDechet.id)">Supprimer</button>
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+  

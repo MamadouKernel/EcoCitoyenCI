@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Liste des rôles</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <th>ID</th>
+                <th>Rôles</th>
+                <th>Actions</th>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let role of roles; let index = index">
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ role.libelle }}</td>
+                  <td>
+                    <button
+                      class="btn btn-danger"
+                      (click)="deleteOneRole(role.id)"
+                    >
+                      Supprimer
+                    </button>
+                    <button
+                      class="btn btn-primary"
+                      (click)="printPage()"
+                    >
+                      Imprimer
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

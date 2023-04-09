@@ -1,0 +1,135 @@
+<div class="container-fluid bg-image p-0 m-0 h-100 w-100">
+  <div class="row h-100">
+    <div class="m-auto col-sm-12 col-md-6 col-lg-6">
+      <div class="content-card">
+        <div class="container-fluid">
+          <div class="row">
+            <div
+              class="col-sm-12 col-md-12 d-flex align-items-center flex-sm-column flex-md-row justify-content-center">
+              <h4 class="font-name-jacques-francois-shadow m-0 color-green">Eco-Citoyen CI</h4>
+              <div class="container-img">
+                <img alt="Icon" src="assets/images/full-trash.png">
+              </div>
+            </div>
+
+            <div class="col-12 mt-1 mb-1">
+              <div class="container-img-login m-auto">
+                <img alt="Avatar" src="assets/images/male-uer.png">
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <h6 class="font-name-jet-brains-mono text-center">
+                login
+              </h6>
+            </div>
+
+            <form class="container-fluid" [formGroup]="form">
+              <div class="row mb-3">
+                <!--<div class="col-12 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col-4 border-end icon-field">
+                      <img alt="" src="assets/images/Admin-Settings-Male.png">
+                    </div>
+                    <div class="col field">
+                      <select class="form-control form-select" name="profile" formControlName="profile">
+                        <option value="">Administrateur</option>
+                        <option value="">Autre</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>-->
+
+                <div class="col-12 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col-4 border-end icon-field">
+                      <img alt="" src="assets/images/Name-Tag.png">
+                    </div>
+                    <div class="col field">
+                      <input formControlName="username" name="username" class="form-control" placeholder="Username or Gmail..........." type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col-4 border-end icon-field">
+                      <img alt="" src="assets/images/Good-Pincode.png">
+                    </div>
+                    <div class="col field">
+                      <input formControlName="password" name="password" class="form-control" id="" placeholder="Password..........." type="password">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="container-fluid">
+              <div class="row mb-3">
+                <div class="col-sm-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
+                  <input formControlName="remember" name="remember" aria-label="Remember Me" class="form-check-input mt-0 me-1" type="checkbox">
+                  <label class="font-name-inter">Remember Me</label>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6  d-flex align-items-center justify-content-center">
+                  <label class="font-name-inter">Forgot Password</label>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-12 mt-2 mb-2 justify-content-center d-flex mt-2">
+              <button (click)="submitForm()" name="submit" class="text-white bg-success btn align-items-center text-center">
+                <label>Se connecter</label>
+                <img alt="login-image" class="icon-login" src="assets/images/login-rounded-up.png">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div [nzGutter]="24" class="container-login" nz-row nzAlign="middle" nzJustify="center">
+  <nz-col [nzSm]="8" [nzXs]="24" class="col-login">
+
+    <nz-row [nzGutter]="24" nzAlign="middle" nzJustify="center">
+      <nz-col [nzSpan]="24">
+        <h2 class="">Connexion</h2>
+      </nz-col>
+    </nz-row>
+    <form (ngSubmit)="submitForm()" [formGroup]="validateForm" class="login-form" nz-form>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group nzPrefixIcon="user">
+            <input formControlName="userName" nz-input placeholder="Username" type="text"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input formControlName="password" nz-input placeholder="Password" type="password"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="login-form-margin" nz-row>
+        <div [nzSpan]="12" nz-col>
+          <label formControlName="remember" nz-checkbox>
+            <span>Remember me</span>
+          </label>
+        </div>
+        <div [nzSpan]="12" nz-col>
+          <a class="login-form-forgot">Forgot password</a>
+        </div>
+      </div>
+      <button [nzType]="'primary'" class="login-form-button login-form-margin" nz-button>Log in</button>
+      Or
+      <a>register now!</a>
+    </form>
+  </nz-col>
+
+</div>
+-->
